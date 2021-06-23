@@ -34,8 +34,31 @@ function stockAndCount( n, arr ){
     return pairs;
 }
 
+
+// solution 3
+// Splice not repeated numbers from the arr
+function spliceAndCount( n, arr){
+    let pairs = 0;
+
+    for (let i = n; i-- > 0;){
+        let count = arr[i];
+        arr.splice(i , 1)
+
+        let offArr = arr.indexOf(count);
+
+        if( offArr != -1){
+            arr.splice(offArr , 1);
+            --i;
+            ++pairs;
+        }
+    }
+
+    return pairs;
+}
+
 const n = 9;
 const arr = [10,20,20,10,10,30,50,10,20];
+
 
 console.clear();
 
@@ -46,4 +69,8 @@ console.groupEnd();
 
 console.group('stockAndCount');
     console.log(`There are a total of ${stockAndCount( n, arr )} Pairs`)
+console.groupEnd();
+
+console.group('spliceAndCount');
+    console.log(`There are a total of ${spliceAndCount( n, arr )} Pairs`)
 console.groupEnd();
