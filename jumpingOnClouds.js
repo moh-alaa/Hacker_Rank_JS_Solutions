@@ -1,4 +1,4 @@
-// Complete the countingVallys function below.
+// Complete the Jumping on clouds function below.
 
 function jumpingOnClouds(c){
     let j = 0;
