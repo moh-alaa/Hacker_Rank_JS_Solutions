@@ -1,12 +1,12 @@
 // Complete the countingVallys function below.
 
-function countingValleys(n, s) {
+function countingValleys(steps, path) {
 
     let l = 0,
         v = 0
   
-    for (let i = n; i-- > 0;) {
-      if (s.charAt(i) === 'U') {
+    for (let i = steps; i-- > 0;) {
+      if (path.charAt(i) === 'U') {
         if (l++ == 0) {
           ++v
         }
